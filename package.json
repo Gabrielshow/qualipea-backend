@@ -1,0 +1,11 @@
+{
+  "name": "qualipea",
+  "version": "1.0.0",
+  "description": "\"backend for handling Qualipea's admin users and Qualipea sites content\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabrielshow",
+  "license": "ISC"
+}
