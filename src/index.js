@@ -5,17 +5,18 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const User = require('./userschema'); // Make sure to import your User model
+const dotenv = require('dotenv');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-const SECRET_KEY = "your_secret_key"; // Use a strong secret key for JWT
+const MONGOURI = process.env.MONGO; // Use a strong secret key for JWT
 
 const connectToDb = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/qualipea", { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect( MONGOURI, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log("Connected to MongoDB");
     } catch (error) {
         console.error("MongoDB connection error:", error);
