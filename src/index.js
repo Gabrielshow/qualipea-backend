@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
-const User = require('./userschema'); // Make sure to import your User model
+const User = require('./schema/userSchema'); // Make sure to import your User model
 const dotenv = require('dotenv');
 
 const app = express();
