@@ -32,4 +32,4 @@ const updateBlog = async (req, res) => {
     }
 };
 
-module.exports = { updateBlog };
+module.exports = updateBlog ;

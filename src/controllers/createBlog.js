@@ -56,4 +56,4 @@ const createBlog = async (req, res) => {
   });
 };
 
-module.exports = { createBlog };
+module.exports = createBlog ;

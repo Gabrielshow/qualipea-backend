@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require ('../schema/User');
+const User = require ('../schema/userSchema');
 
 // JWT authentication middleware
 const authenticateUser = async (req, res, next) => {
