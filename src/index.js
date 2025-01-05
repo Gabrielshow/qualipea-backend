@@ -10,7 +10,7 @@ const { authenticateUser } = require('./middleware/authMiddleware'); // Import t
 
 dotenv.config();
 
-const app = express();
+const app = express(); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -29,6 +29,9 @@ const connectToDb = async () => {
 
 // Use user routes for user-related endpoints
 app.use('/admin', userRoutes);
+
+app.use('/uploads', express.static('uploads'));
+
 
 // Use blog routes for blog-related endpoints
 app.use('/api', authenticateUser, blogRoutes);
