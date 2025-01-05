@@ -1,4 +1,4 @@
-const Blog = require('../schema/Blog');
+const Blog = require('../schema/blogSchema');
 
 const updateBlog = async (req, res) => {
     try {

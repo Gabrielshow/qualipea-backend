@@ -1,3 +1,5 @@
+const Blog = require('../schema/blogSchema');
+
 const deleteBlog = async (req, res) => {
     try {
         const { blogId } = req.params; // Get blog ID from URL
