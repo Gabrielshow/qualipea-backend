@@ -1,4 +1,4 @@
-export const deleteBlog = async (req, res) => {
+const deleteBlog = async (req, res) => {
     try {
         const { blogId } = req.params; // Get blog ID from URL
 
@@ -22,4 +22,6 @@ export const deleteBlog = async (req, res) => {
         res.status(500).json({ message: 'Server error while deleting blog post', error: error.message });
     }
 };
+
+module.exports = { deleteBlog };
 

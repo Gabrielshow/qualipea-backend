@@ -1,6 +1,8 @@
 // routes/blogRoutes.js
 const express = require('express');
-const { createBlog, updateBlog, deleteBlog } = require('../controllers/blogController');
+const createBlog = require('../controllers/createBlog'); 
+const updateBlog = require('../controllers/updateBlog');
+const deleteBlog = require('../controllers/deleteBlog');
 const { authenticateUser } = require('../middleware/authMiddleware');
 
 const router = express.Router();

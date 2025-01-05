@@ -1,6 +1,6 @@
-import multer from 'multer';
-import Blog from '../schema/Blog';
-import path from 'path';
+const multer = require('multer');
+const Blog = require('../schema/blogSchema');
+const path = require('path');
 
 // Setup multer for file uploads (save files locally for simplicity)
 const storage = multer.diskStorage({
@@ -28,7 +28,7 @@ const upload = multer({
 }).single('image'); // "image" is the field name for the uploaded file
 
 // Create blog post handler
-export const createBlog = async (req, res) => {
+const createBlog = async (req, res) => {
   upload(req, res, async (err) => {
     if (err) {
       return res.status(400).json({ message: err.message });
@@ -55,3 +55,5 @@ export const createBlog = async (req, res) => {
     }
   });
 };
+
+module.exports = { createBlog };

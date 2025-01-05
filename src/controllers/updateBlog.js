@@ -1,6 +1,6 @@
-import Blog from '../schema/Blog';
+const Blog = require('../schema/Blog');
 
-export const updateBlog = async (req, res) => {
+const updateBlog = async (req, res) => {
     try {
         const { blogId } = req.params; // Get blog ID from URL
         const { title, content, categories, tags } = req.body;
@@ -31,3 +31,5 @@ export const updateBlog = async (req, res) => {
         res.status(500).json({ message: 'Server error while updating blog post', error: error.message });
     }
 };
+
+module.exports = { updateBlog };
