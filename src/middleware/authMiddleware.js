@@ -1,8 +1,8 @@
-import jwt from 'jsonwebtoken';
-import User from '../schema/User';
+const jwt = require('jsonwebtoken');
+const User = require ('../schema/User');
 
 // JWT authentication middleware
-export const authenticateUser = async (req, res, next) => {
+const authenticateUser = async (req, res, next) => {
     try {
         // Get token from the authorization header
         const token = req.headers.authorization?.split(' ')[1]; // Token comes in as 'Bearer <token>'
@@ -25,3 +25,5 @@ export const authenticateUser = async (req, res, next) => {
         return res.status(401).json({ message: 'Invalid or expired token' });
     }
 };
+
+module.exports = { authenticateUser };
